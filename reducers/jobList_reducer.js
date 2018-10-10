@@ -1,7 +1,10 @@
 
-import {populateJobList, addToJobListANDIncrementNumberOfJobs, openBigCard} from '../core.js';
+import { populateJobList, 
+        addToJobListANDIncrementNumberOfJobs, 
+        openBigCard,
+        INITIAL_STATE } from '../core.js';
 
-export function jobListReducer(state, action) {
+export function jobListReducer(state = INITIAL_STATE, action) {
   // determine which reducer to run
   switch(action.type) {
     case 'POPULATE_JOB_LIST':

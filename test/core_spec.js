@@ -39,6 +39,7 @@ describe('application logic', () => {
             contractor: 'LazyGals, Inc',
           },
         },
+        numberOfJobs: 2,
       });
       expect(nextState).to.equal(Immutable.fromJS(thisVersionOfState));    
     });
@@ -75,6 +76,7 @@ describe('application logic', () => {
             contractor: 'LazyGals, Inc',
           },
         },
+        numberOfJobs: 2,
       });
       expect(nextState).to.equal(thisVersionOfState);
     });

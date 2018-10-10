@@ -1,10 +1,19 @@
 import Immutable, {List, Map} from 'immutable';
 
+export const INITIAL_STATE = Immutable.fromJS({
+    jobs: {},
+    numberOfJobs: 0,
+    bigCard: {},
+});
+
 export function populateJobList(state, jobList) {
   // create immutable data structure out of object passed into state
   const importedJobList = Immutable.fromJS(jobList);
+  const countInitialJobList = Object.keys(jobList);
+  const updatedState = state.set('jobs', importedJobList);
+
   // update state with the immutable data
-  return state.set('jobs', importedJobList);
+  return state.merge(updatedState, {numberOfJobs: countInitialJobList.length} );
 }
 export function addToJobListANDIncrementNumberOfJobs(state, newJob) {
   // get number of jobs in order to dynamically increment the job list
