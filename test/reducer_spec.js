@@ -146,7 +146,7 @@ describe('jobListReducer', () => {
           contractor: 'LazyGals, Inc',
         },
       },
-      // numberOfJobs: 2,
+      numberOfJobs: 2,
     });
     expect(nextState).to.equal(thisVersionOfState);
   });

@@ -7,7 +7,11 @@ describe('store', () => {
   
   it('is a Redux store configured with the correct reducer', () => {
     const store = makeStore();
-    expect(store.getState()).to.equal(Immutable.fromJS({}));
+    expect(store.getState()).to.equal(Immutable.fromJS({
+      jobs: {},
+      numberOfJobs: 0,
+      bigCard: {},
+    }));
 
     store.dispatch({
       type: 'POPULATE_JOB_LIST',
@@ -42,6 +46,7 @@ describe('store', () => {
         },
       },
       numberOfJobs: 2,
+      bigCard: {},
     });
     expect(store.getState()).to.equal(thisVersionOfStore);
   });
