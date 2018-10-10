@@ -81,7 +81,7 @@ describe('application logic', () => {
 
   });
 
-  describe('Adds a new job to the list', () => {
+  describe('Adds a new job to the list and increments number of jobs', () => {
   
     it('adds a new job without deleting an old one', () => {
       const state = Immutable.fromJS({
