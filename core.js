@@ -15,6 +15,7 @@ export function populateJobList(state, jobList) {
   // update state with the immutable data
   return state.merge(updatedState, {numberOfJobs: countInitialJobList.length} );
 }
+
 export function addToJobListANDIncrementNumberOfJobs(state, newJob) {
   // get number of jobs in order to dynamically increment the job list
   const incrementer = 1;
@@ -30,6 +31,7 @@ export function addToJobListANDIncrementNumberOfJobs(state, newJob) {
   // merge new joblist state with an updated count on the number of jobs
   return state.merge(updatedJobListInState, {numberOfJobs: newJobNumber});
 }
+
 export function openBigCard(state, selectedJob) {
   // get the data from the selected job and put it into the variable
   const fillBigCardWithThisData = state.get('jobs').get(selectedJob);
